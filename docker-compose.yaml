@@ -1,0 +1,12 @@
+version: "3"
+services: 
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: tope
+      POSTGRES_USER: tope
+      POSTGRES_DB: locate_restuarant
+  app: 
+    image: my-app
+    ports:
+     - 3000:3000
