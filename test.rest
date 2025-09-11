@@ -1,6 +1,7 @@
 ###
 
-GET http://127.0.0.1:3000
+GET http://127.0.0.1:3000/api/v1/restaurants?lat=6.4363&lng=3.4471&open_now=true
+
 
 ###
 GET  http://127.0.0.1:3000
