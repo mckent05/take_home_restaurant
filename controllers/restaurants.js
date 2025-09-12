@@ -3,16 +3,17 @@ const {
   BadRequestError,
   InternalServerError,
 } = require("../Error");
-
+const getUserLocation = require('../utils/getLocation')
 const findClosestRestaurants = require("../services/restaurantService");
 
 const getRestaurants = async (req, res) => {
   const { lat, lng, radius, price, cuisine, open_now, limit, page } = req.query;
 
   if (!lat || !lng) {
-    const error = new BadRequestError(
-      "Lat and Long query paramaters are required"
-    );
+   const location = getUserLocation()
+   console.log(location)
+   lat = location.latitude
+   lng = location.longitude
     return res.status(error.statusCode).json({ error: error.message });
   }
 
