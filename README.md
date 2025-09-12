@@ -30,10 +30,8 @@ For more information on the importance of a professional README for your reposit
 
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
 
-  <h3><b>Microverse README Template</b></h3>
+  <h3><b>Local Eats</b></h3>
 
 </div>
 
@@ -65,34 +63,20 @@ For more information on the importance of a professional README for your reposit
 
 # 📖 [your_project_name] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+Local Eats is a simple web API application that fetches your favorite restaurants closest to you. It also lets you filter the restaurants by price, cuisine, etc
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
+This project was built using the following technologies:
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li>Node.js</li>
+    <li>ExpressJS</li>
+    <li>PostgreSQL</li>
+    <li>Docker</li>
   </ul>
 </details>
 
@@ -100,11 +84,8 @@ For more information on the importance of a professional README for your reposit
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **Returns restaurants within a 10km radius from a given location/coordinates**
+- **Permits user to filter restaurants by price, cuisine, open_now**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
