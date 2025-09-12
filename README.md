@@ -61,7 +61,7 @@ For more information on the importance of a professional README for your reposit
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Loacl Eats <a name="about-project"></a>
 
 Local Eats is a simple web API application that fetches your favorite restaurants closest to you. It also lets you filter the restaurants by price, cuisine, etc
 
@@ -103,19 +103,21 @@ This project was built using the following technologies:
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project, you need:
 
 <!--
 Example command:
 
 ```sh
- gem install rails
+ NodeJS
+```
+
+```sh
+  Docker 
 ```
  -->
 
@@ -128,7 +130,7 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/mckent05/take_home_restaurant.git
 ```
 --->
 
@@ -140,33 +142,88 @@ Install this project with:
 Example command:
 
 ```sh
-  cd my-project
-  gem install
+  cd take_home_restaurant
+  npm install
 ```
---->
+1. Make sure Docker & Docker Compose are installed.
+2. From repo root run:
 
-### Usage
-
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
+```bash
+docker-compose up --build
 ```
---->
+This will:
+- Start Postgres and initialize with seed data.
+- Build the API image, run the server on `http://localhost:3000`.
 
-### Run tests
+## Running locally (without Docker)
+1. Copy `.env.example` to `.env` and adjust the DB parameters to your local Postgres parameters.
+2. Install dependencies:
 
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
+3. Run Dev:
+```bash
+npm run dev
 ```
+4. Tests:
+
+```bash
+npm test
+```
+
+## API: GET /api/v1/restaurants
+Query parameters:
+- `lat` (required) — latitude
+- `lng` (required) — longitude
+- `radius` (optional, km) — default 10
+- `price` (optional, integer 1-4)
+- `cuisine` (optional, string, case-insensitive substring match)
+- `open_now` (optional, boolean `true`/`false`)
+- `limit` (optional) — default 20
+- `page` (optional) — default 1
+
+
+Example:
+```
+GET api/v1/restaurants?lat=6.5244&lng=3.3792&radius=2&cuisine=italian&open_now=true
+```
+Returns JSON array of restaurants sorted by distance (closest first) with the `distance_km` field.
+Example of data returned:
+```
+[
+  {
+    "id": 11,
+    "name": "Marple Lagos",
+    "latitude": 6.43609,
+    "longitude": 3.4571,
+    "price_level": 4,
+    "cuisine": "Chinese",
+    "opens_at": "08:00:00",
+    "closes_at": "21:00:00",
+    "distance_km": 1.105187700079476
+  },
+  {
+    "id": 12,
+    "name": "Utazi Kitchen & Bar",
+    "latitude": 6.4431,
+    "longitude": 3.4733,
+    "price_level": 3,
+    "cuisine": "Bar",
+    "opens_at": "07:00:00",
+    "closes_at": "23:00:00",
+    "distance_km": 2.9920425899879026
+  },
+  {
+    "id": 10,
+    "name": "Circa Lagos",
+    "latitude": 6.45,
+    "longitude": 3.4735,
+    "price_level": 4,
+    "cuisine": "Fine Dining",
+    "opens_at": "05:00:00",
+    "closes_at": "15:00:00",
+    "distance_km": 3.2908314096461893
+  }
+]```
+
 --->
 
 ### Deployment
@@ -191,15 +248,10 @@ Example:
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/mckent05)
+- Twitter: [@twitterhandle](https://twitter.com/mckent05)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/akinladetemitope)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -209,9 +261,9 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **Add a feature to enable users to review a restaurant**
+- [ ] **Add authentication**
+- [ ] **Add payment integration with Flutterwave or Paystack **
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -249,15 +301,6 @@ I would like to thank...
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
