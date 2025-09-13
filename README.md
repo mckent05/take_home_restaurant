@@ -61,7 +61,7 @@ For more information on the importance of a professional README for your reposit
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Loacl Eats <a name="about-project"></a>
+# 📖 Local Eats <a name="about-project"></a>
 
 Local Eats is a simple web API application that fetches your favorite restaurants closest to you. It also lets you filter the restaurants by price, cuisine, etc
 
