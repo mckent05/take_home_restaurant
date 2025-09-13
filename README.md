@@ -23,13 +23,13 @@ REQUIRED SECTIONS:
 OPTIONAL SECTIONS:
 - FAQ
 
-After you're finished please remove all the comments and instructions!
+After you're finished, please remove all the comments and instructions!
 
 For more information on the importance of a professional README for your repositories: https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/articles/readme_best_practices.md
 -->
 
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
+  <!-- You are encouraged to replace this logo with your own! Otherwise, you can also remove it. -->
 
   <h3><b>Local Eats</b></h3>
 
@@ -107,11 +107,7 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project, you need:
-
-<!--
-Example command:
-
+To run this project, you need:
 ```sh
  NodeJS
 ```
@@ -119,27 +115,18 @@ Example command:
 ```sh
   Docker 
 ```
- -->
-
 ### Setup
 
 Clone this repository to your desired folder:
-
-<!--
-Example commands:
 
 ```sh
   cd my-folder
   git clone https://github.com/mckent05/take_home_restaurant.git
 ```
---->
 
 ### Install
 
 Install this project with:
-
-<!--
-Example command:
 
 ```sh
   cd take_home_restaurant
@@ -147,6 +134,11 @@ Example command:
 ```
 1. Make sure Docker & Docker Compose are installed.
 2. From repo root run:
+
+SEED SQL DATA:
+```bash
+docker-compose exec -T db psql -U <postgres_user> -d locate_restuarant < ./db/database.sql
+```
 
 ```bash
 docker-compose up --build
@@ -223,20 +215,9 @@ Example of data returned:
     "distance_km": 3.2908314096461893
   }
 ]```
-
---->
-
 ### Deployment
 
 You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -263,7 +244,7 @@ Example:
 
 - [ ] **Add a feature to enable users to review a restaurant**
 - [ ] **Add authentication**
-- [ ] **Add payment integration with Flutterwave or Paystack **
+- [ ] **Add payment integration with Flutterwave or Paystack**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -290,9 +271,6 @@ If you like this project...
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
-
 I would like to thank...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
